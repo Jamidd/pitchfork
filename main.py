@@ -1,10 +1,13 @@
 import math 
+from distancias import Distancia
+
 
 COSTO_KM = 172 #CLP
 COSTO_KG_PROD = 8.3 #CLP/KG
 PRECIO_PACKAGE = 8400 #CLP/KG
 PONDERACION_ESCOBAJO = 0.08 #Ponderación KG/CLP
 PRODUCCION = 1.08 #TASA
+
 
 class Terreno:
     def __init__(self, nombre, precio, lat, lon):
@@ -21,8 +24,10 @@ class Terreno:
 
     def distancia(self, coordenated_object):
         # distancia simple mientras tanto
-        return math.sqrt((self.lat-coordenated_object.lat)**2 + (self.lon - coordenated_object.lon)**2)
-    
+        calculador_distancia = Distancia()
+        return calculador_distancia.calculate((self.lat, self.lon), (coordenated_object.lat, coordenated_object.lon))
+
+
     def __lt__(self, other):
         return self.costo < other.costo
     

@@ -1,7 +1,8 @@
 import osmnx as ox
 import networkx as nx
 
-class distancias:
+
+class Distancia:
     def __init__(self):
         self.network = nx.read_gpickle("network.gpickle")
     
