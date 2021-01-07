@@ -4,7 +4,7 @@ class Header extends HTMLElement {
     }
     connectedCallback() {
         this.innerHTML = `
-            <nav class="navbar" role="navigation" aria-label="main navigation">
+            <nav class="navbar" style="background-color:GhostWhite;" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="/">
                     <img src="images/logo.png" width="70" height="28">
@@ -48,10 +48,9 @@ class Header extends HTMLElement {
                             </a>
                         </div>
                     </div> -->
-                </div>
 
-                <div class="navbar-end">
-                    
+                    <div class="navbar-end">
+                    </div>
                 </div>
             </div>
         </nav>
