@@ -3,8 +3,9 @@ import networkx as nx
 
 
 class Distancia:
-    def __init__(self):
-        self.network = nx.read_gpickle("network.gpickle")
+    def __init__(self, map_path):
+        self.map_path = map_path
+        self.network = nx.read_gpickle(self.map_path)
     
     # p1, p2 son un par-cordenadas (lat, lon)
     def calculate(self, p1, p2):
@@ -17,7 +18,7 @@ class Distancia:
     def reload_map(self, p1, p2):
         try:
             network = ox.graph_from_bbox(p1[0], p2[0], p2[1], p1[1], custom_filter = '["highway"~"primary|secondary|tertiary"]')
-            nx.write_gpickle(network, "network.gpickle")
+            nx.write_gpickle(network, self.map_path)
             self.network = network
             return True
         except:
