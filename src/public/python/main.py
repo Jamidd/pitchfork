@@ -1,6 +1,8 @@
 import math 
 from distancias import Distancia
 
+PATH = "../data/"
+
 COSTO_KM = 172 #CLP
 COSTO_KG_PROD = 8.3 #CLP/KG
 PRECIO_PACKAGE = 8400 #CLP/KG
@@ -27,7 +29,7 @@ class Terreno:
             self.costo += costo_recoleccion + costo_entrega + costo_produccion
 
     def distancia(self, coordenated_object):
-        calculador_distancia = Distancia()
+        calculador_distancia = Distancia(PATH + "network.gpickle")
         return calculador_distancia.calculate((self.lat, self.lon), (coordenated_object.lat, coordenated_object.lon))
 
     def __lt__(self, other):
@@ -62,11 +64,11 @@ class Vina:
 terrenos = list()
 vinas = list()
 
-with open('terrenos.txt', 'r', encoding="utf-8") as terrenosFile:
+with open(PATH + 'terrenos.txt', 'r', encoding="utf-8") as terrenosFile:
     for terreno in terrenosFile:
         terrenos.append(Terreno(*terreno.split(";")))
 
-with open('vinas.txt', 'r', encoding="utf-8") as vinasFile:
+with open(PATH + 'vinas.txt', 'r', encoding="utf-8") as vinasFile:
     for vina in vinasFile:
         vinas.append(Vina(*vina.split(";")))
 
@@ -75,6 +77,6 @@ for terreno in terrenos:
 
 terrenos = sorted(terrenos, key=lambda x: x.costo, reverse=False)
 
-with open("costos_terrenos.csv", "w") as file:
+with open(PATH + "costos_terrenos.csv", "w") as file:
     for t in terrenos:
-        file.write(f"{t.nombre}, {t.precio}, {t.costo}, {t.lat}, {t.lon}\n")
+        file.write(f"{t.nombre};{t.precio};{t.costo};{t.lat};{t.lon}\n")
