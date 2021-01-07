@@ -18,7 +18,7 @@ class Terreno:
         self.costo = 0
     
     def costo_transporte(self, vinas):
-        self.costo = 0
+        self.costo = self.precio
         for vina in vinas:
             self.costo += self.distancia(vina) * COSTO_KM + (PONDERACION_ESCOBAJO + PRODUCCION*COSTO_KG_PROD) * vina.produccion
 
@@ -71,5 +71,6 @@ with open('vinas.txt', 'r', encoding="utf-8") as vinasFile:
 for terreno in terrenos:
     terreno.costo_transporte(vinas)
 
-print(min(terrenos))
-
+with open("costos_terrenos.csv", "w") as file:
+    for t in terrenos:
+        file.write(f"{t.nombre}, {t.precio}, {t.costo}, {t.lat}, {t.lon}\n")
