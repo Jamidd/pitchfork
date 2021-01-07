@@ -1,13 +1,12 @@
 import math 
 from distancias import Distancia
 
-
 COSTO_KM = 172 #CLP
 COSTO_KG_PROD = 8.3 #CLP/KG
 PRECIO_PACKAGE = 8400 #CLP/KG
 PONDERACION_ESCOBAJO = 0.08 #Ponderación KG/CLP
 PRODUCCION = 1.08 #TASA
-
+CAPACIDAD_CAMION = 3000
 
 class Terreno:
     def __init__(self, nombre, precio, lat, lon):
@@ -20,13 +19,16 @@ class Terreno:
     def costo_transporte(self, vinas):
         self.costo = self.precio
         for vina in vinas:
-            self.costo += self.distancia(vina) * COSTO_KM + (PONDERACION_ESCOBAJO + PRODUCCION*COSTO_KG_PROD) * vina.produccion
+            #TODO: ida y vuelta 
+            distancia = self.distancia(vina)
+            costo_recoleccion =  2 * math.ceil(vina.produccion/CAPACIDAD_CAMION) * distancia * COSTO_KM
+            costo_entrega = 2 * math.ceil((PRODUCCION *  vina.produccion)/CAPACIDAD_CAMION) * distancia * COSTO_KM
+            costo_produccion = (PRODUCCION * COSTO_KG_PROD - PONDERACION_ESCOBAJO) * vina.produccion
+            self.costo += costo_recoleccion + costo_entrega + costo_produccion
 
     def distancia(self, coordenated_object):
-        # distancia simple mientras tanto
         calculador_distancia = Distancia()
         return calculador_distancia.calculate((self.lat, self.lon), (coordenated_object.lat, coordenated_object.lon))
-
 
     def __lt__(self, other):
         return self.costo < other.costo
