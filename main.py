@@ -73,6 +73,8 @@ with open('vinas.txt', 'r', encoding="utf-8") as vinasFile:
 for terreno in terrenos:
     terreno.costo_transporte(vinas)
 
+terrenos = sorted(terrenos, key=lambda x: x.costo, reverse=False)
+
 with open("costos_terrenos.csv", "w") as file:
     for t in terrenos:
         file.write(f"{t.nombre}, {t.precio}, {t.costo}, {t.lat}, {t.lon}\n")
