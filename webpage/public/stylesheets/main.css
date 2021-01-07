@@ -1,0 +1,37 @@
+@import 'bulma.css';
+@import "style.css";
+/* @import 'bulma-floating-button.min.css'; */
+
+.wapp {
+    width:50px;
+    height:50px;
+    bottom:40px;
+    right:40px;
+    border-radius: 40px;
+    position:fixed;
+    text-align:center; 
+    font-size:1.6rem;
+    box-shadow:0 .0625em .125em rgba(10,10,10,.05);
+    z-index:3
+}
+  
+.back-title-color{
+    background-color: lightgrey;
+    margin-bottom: 2rem;
+}
+
+.whitecolor {
+    color: #ffffff;
+    text-shadow: black 4px 4px 8px;
+}
+.redes-sociales i {
+    color: #fff;
+    font-size: 30px;
+}
+li {
+    display: inline-block;
+    padding: 10px;
+}
+ul.center.text-center {
+    padding-top: 30px;
+}
