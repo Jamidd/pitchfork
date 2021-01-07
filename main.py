@@ -6,7 +6,7 @@ COSTO_KG_PROD = 8.3 #CLP/KG
 PRECIO_PACKAGE = 8400 #CLP/KG
 PONDERACION_ESCOBAJO = 0.08 #Ponderación KG/CLP
 PRODUCCION = 1.08 #TASA
-CAPACIDAD_CAMION = 3000
+CAPACIDAD_CAMION = 3000 #KG
 
 class Terreno:
     def __init__(self, nombre, precio, lat, lon):
