@@ -19,12 +19,14 @@
 <main>
   <div class="columns is-mobile is-centered padding">
     <div class="column has-text-centered">
-      <form class="form-horizontal" action="/simulate" method="POST">
+      <form class="form-horizontal" onsubmit="" action="/simulate/sim" method="POST">
         <fieldset>
           <p>Ingresa tu dirección para empezar la simulación</p>
           <input name="address" style="width:30em;" class="input is-primary bottom10" type="text" placeholder="avenida la calle 1111">
           <br>
-          <input type="hidden" name="cantidad_escobajo" value="NoNe"><br>
+          <p>Ingresa cantida de escobajo</p>
+          <input name="cantidad_escobajo" style="width:30em;" class="input is-primary bottom10" type="number" placeholder="9999">
+          <br>
           <button class="button is-primary">Comenzar</button>
         </fieldset>
       </form>

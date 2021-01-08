@@ -1,3 +1,4 @@
+
 var mymap = L.map('mapid').setView([-33.97, -70.74], 8);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
@@ -22,7 +23,11 @@ var greenIcon = new DefIcon({ iconUrl: 'https://raw.githubusercontent.com/pointh
     violetIcon = new DefIcon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png' }),
     blueIcon = new DefIcon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png' });
 
-var myLat, myLon;
+var myLat, myLon, farmLat, farmLon, dist;
+
+function getLatLon() {
+    return [myLat, myLon]
+}
 
 function getCoords(address) {
     // Creamos el objeto geodecoder
@@ -61,9 +66,9 @@ function add_terreno(locations) {
     var locs = locations.split("\n")
     const element = locs[0].split(';');
     if (element.length === 5) {
-        L.marker([element[3], element[4]], { icon: greenIcon })
+        farmLat = element[3];
+        farmLon = element[4];
+        L.marker([farmLat, farmLon], { icon: greenIcon })
             .addTo(mymap).bindPopup("FungiPackage");
     }
 }
-
-readTextFile("data/costos_terrenos.csv");

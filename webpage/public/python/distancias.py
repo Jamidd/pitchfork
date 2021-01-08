@@ -1,6 +1,8 @@
 import osmnx as ox
 import networkx as nx
+import sys
 
+FILE_PATH = PATH = "../data/network.gpickle"
 
 class Distancia:
     def __init__(self, map_path):
@@ -23,3 +25,14 @@ class Distancia:
             return True
         except:
             return False
+
+
+def get_dist(lat1, lon1, lat2, lon2):
+    print(lat1, lon1, lat2, lon2, lat1, lon1, lat2, lon2)
+    # d = Distancia(FILE_PATH)
+    # return d.calculate((lat1, lon1), (lat2, lon2))
+
+if __name__ == "__main__":
+    print(1, 2, 3, 4)
+    # a, b, c, d = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    # get_dist(a, b, c, d)

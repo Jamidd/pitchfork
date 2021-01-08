@@ -6,15 +6,19 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.1.14",
     "body-parser": "^1.19.0",
     "bulma": "^0.9.1",
     "bulma-floating-button": "^1.0.3",
+    "child_process": "^1.0.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^3.1.5",
     "express": "~4.16.1",
+    "googlemaps": "^1.12.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "node-geocoder": "^3.27.0"
   }
 }
