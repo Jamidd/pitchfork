@@ -31,9 +31,10 @@
     var address = "<%= address %>";
     console.log(address)
   </script>
-
-  <h1>FungiPackage Locations simular</h1>
-  <div id="mapid"></div>
+  <div class="has-text-centered bottom10">
+    <h2 class="title is-1 main-title">Simulador FungiPackage</h2>
+  </div>
+  <div class="map" id="mapid"></div>
   <form name="mapForm" action="/simulate" onsubmit="return validateForm()" method="post">
 
     <input type="hidden" id="direccion" name="direccion" value="<%= address %>"><br>

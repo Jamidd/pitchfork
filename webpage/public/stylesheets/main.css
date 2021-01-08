@@ -2,6 +2,7 @@
 @import "style.css";
 @import "font-awesome.min.css";
 @import "animate.min.css";
+@import "map.css";
 /* @import 'bulma-floating-button.min.css'; */
 
 .wapp {
@@ -36,4 +37,12 @@ li {
 }
 ul.center.text-center {
     padding-top: 30px;
+}
+
+.main-title {
+    margin-top: 20px;
+}
+
+.unique-obj{
+    margin-top: 15%;
 }
