@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "bulma": "^0.9.1",
     "bulma-floating-button": "^1.0.3",
     "cookie-parser": "~1.4.4",
