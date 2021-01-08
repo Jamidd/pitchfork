@@ -22,6 +22,26 @@ var greenIcon = new DefIcon({ iconUrl: 'https://raw.githubusercontent.com/pointh
     violetIcon = new DefIcon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png' }),
     blueIcon = new DefIcon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png' });
 
+function getCoords(address) {
+    // Creamos el objeto geodecoder
+    var geocoder = new google.maps.Geocoder();
+
+    if (address != '') {
+        // Llamamos a la función geodecode pasandole la dirección que hemos introducido en la caja de texto.
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == 'OK') {
+                // Mostramos las coordenadas obtenidas en el p con id coordenadas
+                document.getElementById("coordenadas").innerHTML = 'Coordenadas:   ' + results[0].geometry.location.lat() + ', ' + results[0].geometry.location.lng();
+
+                // TODO: Situar punto en mapa
+                L.marker([results[0].geometry.location.lat(), results[0].geometry.location.lng()], { icon: blueIcon })
+                    .addTo(mymap).bindPopup("Tu Ubicación");
+            }
+        });
+    }
+}
+
+
 function readTextFile(file) {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
@@ -36,7 +56,7 @@ function readTextFile(file) {
                     console.log('adding vinahas')
                     add_terrenos(allText, false);
                 }
-                
+
             }
         }
     }
@@ -52,19 +72,19 @@ function add_terrenos(locations, terrenos) {
             if (element.length === 5) {
                 if (i === 0) {
                     L.marker([element[3], element[4]], { icon: greenIcon })
-                    .addTo(mymap).bindPopup("Terreno: " + element[0] + "<br>Precio Terreno: " + element[1] + "<br>Costo Total: " + element[2]);
+                        .addTo(mymap).bindPopup("Terreno: " + element[0] + "<br>Precio Terreno: " + element[1] + "<br>Costo Total: " + element[2]);
                 } else {
                     L.marker([element[3], element[4]], { icon: blueIcon })
-                    .addTo(mymap).bindPopup("Terreno: " + element[0] + "<br>Precio Terreno: " + element[1] + "<br>Costo Total: " + element[2]);
+                        .addTo(mymap).bindPopup("Terreno: " + element[0] + "<br>Precio Terreno: " + element[1] + "<br>Costo Total: " + element[2]);
                 }
             }
         } else {
             if (element.length === 4) {
                 L.marker([element[2], element[3]], { icon: violetIcon })
-                .addTo(mymap).bindPopup("Vinha: " + element[0] + "<br>Produccion: " + element[1]);
+                    .addTo(mymap).bindPopup("Vinha: " + element[0] + "<br>Produccion: " + element[1]);
             }
         }
-        
+
     }
 }
 

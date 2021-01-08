@@ -10,8 +10,8 @@ router.get('/log', function(req, res, next) {
 
 router.post('/', function(req, res){
   console.log(req.body);
-  res.render('simulate', {title: 'Express', address: req.body.direccion, 
-  escobajo: req.body.cantidad_escobajo, costo: req.body.costo_empaquetamiento})
+  res.render('simulate', {title: 'Express', address: req.body.address})
+  // escobajo: req.body.cantidad_escobajo, costo: req.body.costo_empaquetamiento})
 })
 
 module.exports = router;
