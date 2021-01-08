@@ -6,3 +6,33 @@
 #mapid {
   height: 400px;
 }
+
+.icon{
+  width: 230px;
+  height: 200px;
+}
+
+.center-column{
+  text-align: center;
+}
+
+.icon-text{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 40px;
+}
+
+.icon-subtext{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+}
+
+.log-banner{
+  width: 1280px;
+  height: 419px;
+}
+
+.long-text{
+  margin-left: 27%;
+  width: 230px;
+  word-wrap: break-word;
+}
