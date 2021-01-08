@@ -1,12 +1,4 @@
 @import "main.css";
-.has-bg-img {
-    background: url(../images/preuniversitario.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
 #mapid {
       height: 400px;
 }

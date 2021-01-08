@@ -1,5 +1,7 @@
 @import 'bulma.css';
 @import "style.css";
+@import "font-awesome.min.css";
+@import "animate.min.css";
 /* @import 'bulma-floating-button.min.css'; */
 
 .wapp {
