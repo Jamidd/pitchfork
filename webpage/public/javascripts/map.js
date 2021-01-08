@@ -1,4 +1,4 @@
-var mymap = L.map('mapid').setView([-33.44, -70.66], 11);
+var mymap = L.map('mapid').setView([-33.97, -70.74], 8);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -21,18 +21,6 @@ var DefIcon = L.Icon.extend({
 var greenIcon = new DefIcon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png' }),
     violetIcon = new DefIcon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png' }),
     blueIcon = new DefIcon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png' });
-
-// //optimo
-// L.marker([-33.45, -70.65], { icon: greenIcon }).addTo(mymap)
-//     .bindPopup("<b>Hello world!</b><br>I am a popup.");
-
-// // vinhas
-// L.marker([-33.49, -70.65], { icon: violetIcon }).addTo(mymap)
-//     .bindPopup("<b>Hello world!</b><br>I am a popup.");
-
-// //terrenos 
-// L.marker([-33.46, -70.62], { icon: blueIcon }).addTo(mymap)
-//     .bindPopup("<b>Hello world!</b><br>I am a popup.");
 
 function readTextFile(file) {
     var rawFile = new XMLHttpRequest();
@@ -61,9 +49,7 @@ function add_terrenos(locations, terrenos) {
         const element = locs[i].split(';');
 
         if (terrenos === true) {
-            console.log('entre', element, element.length)
             if (element.length === 5) {
-                console.log('entre2')
                 if (i === 0) {
                     L.marker([element[3], element[4]], { icon: greenIcon })
                     .addTo(mymap).bindPopup("Terreno: " + element[0] + "<br>Precio Terreno: " + element[1] + "<br>Costo Total: " + element[2]);
@@ -73,7 +59,6 @@ function add_terrenos(locations, terrenos) {
                 }
             }
         } else {
-            console.log(element)
             if (element.length === 4) {
                 L.marker([element[2], element[3]], { icon: violetIcon })
                 .addTo(mymap).bindPopup("Vinha: " + element[0] + "<br>Produccion: " + element[1]);

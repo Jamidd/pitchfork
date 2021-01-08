@@ -6,3 +6,7 @@
     background-attachment: fixed;
     background-size: cover;
 }
+
+#mapid {
+      height: 400px;
+}
