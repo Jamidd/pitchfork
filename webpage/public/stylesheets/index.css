@@ -1,4 +1,24 @@
 @import "main.css";
-#mapid {
-      height: 400px;
+
+
+.container {
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.banner-text{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.index-image{
+    margin-top: 40px;
 }

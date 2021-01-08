@@ -7,7 +7,7 @@ class Header extends HTMLElement {
             <nav class="navbar" style="background-color:GhostWhite;" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="/">
-                    <img src="/images/logo.png" width="70" height="28">
+                    <img src="/images/logo.png" width="40" height="40">
                 </a>
 
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
