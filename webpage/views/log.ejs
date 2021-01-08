@@ -19,10 +19,10 @@
 <main>
   <div class="columns is-mobile is-centered padding">
     <div class="column has-text-centered">
-      <form class="form-horizontal" action="/simulate" method="get">
+      <form class="form-horizontal" action="/simulate" method="POST">
         <fieldset>
-          <p>Ingresa tu mail para empezar la simulación</p>
-          <input style="width:30em;" class="input is-primary bottom10" type="email" placeholder="email@domain.com">
+          <p>Ingresa tu dirección para empezar la simulación</p>
+          <input name="address" style="width:30em;" class="input is-primary bottom10" type="text" placeholder="avenida la calle 1111">
           <br>
           <button class="button is-primary">Comenzar</button>
         </fieldset>
