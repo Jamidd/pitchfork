@@ -17,7 +17,9 @@
   <script src="/components/header.js" type="text/javascript"></script>
   <script src="/components/whatsapp.js" type="text/javascript"></script>
 
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"></script> -->
+  
+  <!-- <script src="javascripts/form.js" type="text/javascript"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0d-yDpXtOKVW0ExGP6C1rdYBBfsLg8FM"></script>
 
   <title>Leaflets example</title>
 </head>
@@ -30,7 +32,10 @@
   <script>
     var address = "<%= address %>";
     console.log(address)
+    var escobajo = "<%= escobajo %>";
+    console.log(escobajo)
   </script>
+
   <div class="has-text-centered bottom10">
     <h2 class="title is-1 main-title">Simulador FungiPackage</h2>
   </div>
@@ -66,10 +71,9 @@
       </div>
     </div>
   </div>
-  
 
-  <button onclick="execute()"> Ejecutar Optimizacion </button>
   <script src="javascripts/map.js" type="text/javascript"></script>
+  <script>getCoords(address)</script>
 </main>
 
 </body>
