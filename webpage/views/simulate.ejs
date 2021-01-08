@@ -17,7 +17,9 @@
   <script src="/components/header.js" type="text/javascript"></script>
   <script src="/components/whatsapp.js" type="text/javascript"></script>
 
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"></script> -->
+  
+  <!-- <script src="javascripts/form.js" type="text/javascript"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0d-yDpXtOKVW0ExGP6C1rdYBBfsLg8FM"></script>
 
   <title>Leaflets example</title>
 </head>
@@ -30,23 +32,21 @@
   <script>
     var address = "<%= address %>";
     console.log(address)
+    var escobajo = "<%= escobajo %>";
+    console.log(escobajo)
   </script>
 
-  <h1>FungiPackage Locations simular</h1>
+  <h1 class="title is-3">Simulador</h1>
   <div id="mapid"></div>
-  <form name="mapForm" action="/simulate" onsubmit="return validateForm()" method="post">
-
-    <input type="hidden" id="direccion" name="direccion" value="<%= address %>"><br>
+  <form name="mapForm" action="/simulate" method="post">
+    <input type="hidden" name="address" value="<%= address %>"><br>
     <label for="cantidad_escobajo">Cantidad Escobajo (KG/Año): </label><br>
-    <input type="text" id="cantidad_escobajo" name="cantidad_escobajo"><br>
-    <label for="costo_empaquetamiento">Costo Empaquetamiento ($/KG): </label><br>
-    <input type="text" id="costo_empaquetamiento" name="costo_empaquetamiento"><br>
+    <input type="text" name="cantidad_escobajo" required pattern="[0123456789]+"><br>
     <input type="submit" value="Submit">
   </form>
 
-  <button onclick="execute()"> Ejecutar Optimizacion </button>
-
   <script src="javascripts/map.js" type="text/javascript"></script>
+  <script>getCoords(address)</script>
 </main>
 
 </body>
