@@ -23,10 +23,6 @@ class Header extends HTMLElement {
                         Home
                     </a>
 
-                    <a class="navbar-item" href="/nosotros">
-                        Nosotros
-                    </a>
-
                     <a class="navbar-item" href="/simulate/log">
                         Simular
                     </a>
