@@ -18,13 +18,16 @@ Map Design:
 * npm 6.13
 
 ## Instrucciones:
-* 1) En la consola, ubicado en el directorio principal ejecutar los siguientes comandos.
+* 1) En la consola WSL, ubicada en el directorio principal pitchfork ejecutar los siguientes comandos.
 
 ```
-> pip3 install -r requirements
+> pip3 install -r requirements.txt
 > cd webpage
 > npm install
-> npm run
+(Opcional: Arreglar vulnerabilidades que encuentre el install)
+> npm audit fix
+(--------)
+> npm start
 ```
 
 * 2) Entrar al browser con la URL: http://localhost:3000/
